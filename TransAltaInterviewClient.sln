@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "TransAltaInterviewClient", "TransAltaInterviewClient\TransAltaInterviewClient.esproj", "{573BECB1-622D-4965-B11D-64E4A9AF2CDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{573BECB1-622D-4965-B11D-64E4A9AF2CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{573BECB1-622D-4965-B11D-64E4A9AF2CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{573BECB1-622D-4965-B11D-64E4A9AF2CDB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{573BECB1-622D-4965-B11D-64E4A9AF2CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{573BECB1-622D-4965-B11D-64E4A9AF2CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{573BECB1-622D-4965-B11D-64E4A9AF2CDB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {149151A2-2BD5-4B71-A547-2B8EE65C3964}
+	EndGlobalSection
+EndGlobal
