@@ -15,12 +15,12 @@ export function HistoricalWeatherRecords() {
     const years = Array(63).fill().map((_, idx) => 1960 + idx);
 
     const handleGetData = () => {
+        setDataInvalid(false);
         axios.get(`https://interview2022.azurewebsites.net/api/weather/getMonthlySummary?month=${month}&year=${year}`).then((res) => {
             setWeatherData(res.data);
             console.log(weatherData);
             setValuesSet(true);
-        }).then(() => {
-            if (weatherData.coldestday === 0) {
+            if (res.data.coldestday === 0) {
                 setDataInvalid(true);
             }
         });
