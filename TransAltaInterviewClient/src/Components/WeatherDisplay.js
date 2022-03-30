@@ -17,7 +17,6 @@ export function WeatherDisplay() {
                     .format(weatherData.timestamp);
                 setDate(formatDate);
                 setValuesSet(true);
-                console.log(weatherData);
             });
         }
     });

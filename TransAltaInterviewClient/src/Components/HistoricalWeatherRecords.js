@@ -8,6 +8,7 @@ import Item from './Item';
 export function HistoricalWeatherRecords() {
     const [weatherData, setWeatherData] = useState();
     const [valuesSet, setValuesSet] = useState(false);
+    const [dataInvalid, setDataInvalid] = useState(false);
     const [month, setMonth] = useState(1);
     const [year, setYear] = useState(2022);
 
@@ -18,6 +19,10 @@ export function HistoricalWeatherRecords() {
             setWeatherData(res.data);
             console.log(weatherData);
             setValuesSet(true);
+        }).then(() => {
+            if (weatherData.coldestday === 0) {
+                setDataInvalid(true);
+            }
         });
     }
 
@@ -82,16 +87,21 @@ export function HistoricalWeatherRecords() {
                         bgcolor: 'background.paper',
                         borderRadius: 1,
                 }}            >
-                {valuesSet && (
+                {valuesSet && !dataInvalid && (
                     <>
-                        <Item>Coldest Day of Month (C): {weatherData.coldestday}</Item>
-                        <Item>Coldest Temperature: {weatherData.coldesttemp}</Item>
+                        <Item>Coldest Day of Month: {weatherData.coldestday}</Item>
+                        <Item>Coldest Temperature (C): {weatherData.coldesttemp}</Item>
                         <Item>Hottest Day of Month: {weatherData.hottestday}</Item>
                         <Item>Hottest Temperature (C): {weatherData.hottesttemp}</Item>
                         <Item>Days with Wind Gusts >50km/h: {weatherData.maxgustdays}</Item>
                         <Item>Total Percipitation (mm): {weatherData.totalpercipitation}</Item>
                     </>
-                )}
+                    )}
+                    {dataInvalid && (
+                        <Item>
+                            The data you have requested could not be found or is invalid.
+                        </Item>
+                        )}
                 </Box>
             </Item>
         </>
